@@ -208,12 +208,12 @@ class PatternLibrary
         placePattern(rotc, tiles, freqs);
         
         // Optional extra patterns
-        //placePattern(rota.flipH(), tiles, freqs);
-        //placePattern(rota.flipV(), tiles, freqs);
-        //placePattern(rotb.flipH(), tiles, freqs);
-        //placePattern(rotb.flipV(), tiles, freqs);
-        //placePattern(rotc.flipH(), tiles, freqs);
-        //placePattern(rotc.flipV(), tiles, freqs);
+        placePattern(rota.flipH(), tiles, freqs);
+        placePattern(rota.flipV(), tiles, freqs);
+        placePattern(rotb.flipH(), tiles, freqs);
+        placePattern(rotb.flipV(), tiles, freqs);
+        placePattern(rotc.flipH(), tiles, freqs);
+        placePattern(rotc.flipV(), tiles, freqs);
       }
     }
     
@@ -368,7 +368,6 @@ class Wave
   int h = 1;
   boolean initial = true;
   boolean isStable = true;
-  boolean contra = false;
   
   Field[] area; // flattened 2D array
   PatternLibrary lib;
@@ -429,7 +428,6 @@ class Wave
     {
       Field f = area[idx];
       if (f.collapse()) todo.push(idx); // do not use contradiction for remainder
-      else contra = false;
     }
   }
   
@@ -539,8 +537,8 @@ void setup()
 {
   size(768,512,P2D);
   
-  int outWidth = 90;
-  int outHeight = 90;
+  int outWidth = 60;
+  int outHeight = 60;
   
   ((PGraphicsOpenGL)g).textureSampling(POINT);
   
@@ -562,7 +560,7 @@ void setup()
   orig.stroke(255);
   orig.noFill();
   orig.strokeWeight(2);
-  orig.ellipse(orig.width/2,orig.height/2, 10,10);
+  orig.ellipse(orig.width/2,orig.height/2, 14,14);
   orig.loadPixels(); // this must be between begin- and endDraw()
   orig.endDraw();
   
@@ -588,6 +586,6 @@ void draw()
   image(orig, 600, 0);
   
   fill(255);
-  text("frame: " + frameCount + "\ncontradiction: " + wave.contra, 512, 20);
+  text("frame: " + frameCount, 512, 20);
 }
 
