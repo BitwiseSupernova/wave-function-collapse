@@ -7,6 +7,10 @@ and then at: https://github.com/mxgmn/WaveFunctionCollapse
 Known issue: sometimes the sequence will stop and flood the remaining area with null markers, presumably when a contradiction occurs but I have been unable to catch it.
 Unfortunately, I have yet to implement a good method to recover as restarting where the program left off leads to the same result. Other methods may no longer align generated output (depending on patterns).
 
+
+The file "waveFuncLetters.pde" is a very simple word-search-builder. The algorithm lends itself very well with some input and filling in the rest.
+
+
 Example input:
 <img src="waveSource.png">
 
@@ -14,3 +18,6 @@ Example input:
 Example output:
 
 <img src="waveOut.png">
+
+
+
