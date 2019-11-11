@@ -10,6 +10,9 @@ Unfortunately, I have yet to implement a good method to recover as restarting wh
 
 The file "waveFuncLetters.pde" is a very simple word-search-builder. The algorithm lends itself very well with some input and filling in the rest.
 
+A few examples:
+https://youtu.be/THvTgZZEeOU
+
 
 Example input:
 <img src="waveSource.png">
